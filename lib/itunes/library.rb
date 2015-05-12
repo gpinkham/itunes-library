@@ -19,6 +19,7 @@ module ITunes
     end
 
     def playlists
+      return nil if self['Playlists'].nil?
       @playlists ||= self['Playlists'].map { |p| Playlist.new(self, p) }
     end
 
